@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@@{
+    ViewData["Title"] = "ThrowBomb";
+}
+
+<h1>SeaBattle</h1>
+<p> Game id: @ViewBag.gameId</p>
+<p> Speler: @ViewBag.spelerNaam</p>
+<p> Gestart met spelen: @ViewBag.gestartMetSpelen</p>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+<h1>Bom info</h1>
+
+<p>Location of the bombing: @ViewBag.Location</p>
+<p>Result of the bombing: @ViewBag.Result</p>
+<p>Number of sunken boats: @ViewBag.SunkenBoatsCount</p>
+<tbody>
+    @foreach (var boat in ViewBag.Boats)
+    {
+        <tr>
+            <td>@($"{boat.location.Letter}{boat.location.Number}")</td>
+            <td>@($"{boat.status}")</td>
+        </tr>
+        <tr><td colspan="2"><br></td></tr> 
+    }
+</tbody>
+
+
+

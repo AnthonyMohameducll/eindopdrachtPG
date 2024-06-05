@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PRG.EVA01.SeaBattle.props" />
+</Project>
